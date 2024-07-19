@@ -30,11 +30,11 @@ router.post("/create_order", async (req, res) => {
       ...orderData,
     });
 
-    // const savedOrder = await newOrder.save(); 
+    const savedOrder = await newOrder.save(); 
 
     await sendConfirmationEmails(newOrder);
 
-    res.status(200).json(newOrder);
+    res.status(200).json(savedOrder);
   } catch (err) {
     console.log("err", err);
     res.status(500).json("Connection error!");
