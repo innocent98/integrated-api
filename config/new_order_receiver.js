@@ -3,14 +3,6 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-const transport = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
-
 module.exports.confirmationEmailReceiver = async (
   email,
   receiverName,
@@ -18,8 +10,29 @@ module.exports.confirmationEmailReceiver = async (
   pickupFrom,
   deliverTo
 ) => {
+  const transport = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "integratedcurriercompany@gmail.com",
+      pass: "zbspbhbigckxncpa",
+    },
+  });
+
   console.log("Check");
-  console.log(email)
+  console.log(email);
+
+  await new Promise((resolve, reject) => {
+    // verify connection configuration
+    transport.verify(function (error, success) {
+      if (error) {
+        console.log(error);
+        reject(error);
+      } else {
+        console.log("Server is ready to take our messages");
+        resolve(success);
+      }
+    });
+  });
 
   const message = {
     from: `"Integrated Courier Service" <${process.env.EMAIL_USER}>`,
@@ -55,8 +68,10 @@ module.exports.confirmationEmailReceiver = async (
     transport.sendMail(message, (err, info) => {
       if (err) {
         console.log(err);
+        reject(err);
       } else {
         console.log("sent");
+        resolve(info);
       }
     });
   });
