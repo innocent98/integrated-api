@@ -19,6 +19,7 @@ module.exports.confirmationEmailReceiver = async (
   deliverTo
 ) => {
   console.log("Check");
+  console.log(email)
 
   const message = {
     from: `"Integrated Courier Service" <${process.env.EMAIL_USER}>`,
