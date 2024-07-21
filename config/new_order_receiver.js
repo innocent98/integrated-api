@@ -4,9 +4,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const transport = nodemailer.createTransport({
-  port: process.env.EMAIL_PORT,
-  host: process.env.EMAIL_HOST,
-  secure: true,
+  service: "gmail",
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
@@ -51,8 +49,6 @@ module.exports.confirmationEmailReceiver = async (
     </body>
     </html>`,
   };
-
-  // <p style="font-size: 16px; margin: 5px 0;"><strong>Scheduled Date & Time:</strong> [Scheduled Date & Time]</p>
 
   await new Promise((resolve, reject) => {
     transport.sendMail(message, (err, info) => {

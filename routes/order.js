@@ -30,7 +30,7 @@ router.post("/create_order", async (req, res) => {
       ...orderData,
     });
 
-    const savedOrder = await newOrder.save(); 
+    const savedOrder = await newOrder.save();
 
     await sendConfirmationEmails(newOrder);
 
@@ -66,7 +66,7 @@ router.put("/create_order/:id", async (req, res) => {
 // get all orders
 router.get("/orders", async (req, res) => {
   try {
-    const orders = await Order.find();
+    const orders = await Order.find().sort({ createdAt: -1 }).exec();
 
     if (orders.length > 0) {
       res.status(200).json(orders);
