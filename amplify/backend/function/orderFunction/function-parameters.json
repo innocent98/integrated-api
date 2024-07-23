@@ -1,0 +1,17 @@
+{
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "mongodbUrl",
+      "environmentVariableName": "MONGODB_URL"
+    },
+    {
+      "cloudFormationParameterName": "emailUser",
+      "environmentVariableName": "EMAIL_USER"
+    },
+    {
+      "cloudFormationParameterName": "emailPass",
+      "environmentVariableName": "EMAIL_PASS"
+    }
+  ]
+}

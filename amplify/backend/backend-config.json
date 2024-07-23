@@ -1,0 +1,68 @@
+{
+  "api": {
+    "orderApi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "orderFunction"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "orderFunction": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_orderFunction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "orderFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_orderFunction_emailPass": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "orderFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_orderFunction_emailUser": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "orderFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_orderFunction_mongodbUrl": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "orderFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_orderFunction_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "orderFunction"
+        }
+      ]
+    }
+  }
+}

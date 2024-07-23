@@ -1,0 +1,29 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-integratedapi-dev-224119-authRole",
+      "UnauthRoleArn": "arn:aws:iam::767397674033:role/amplify-integratedapi-dev-224119-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::767397674033:role/amplify-integratedapi-dev-224119-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-integratedapi-dev-224119-deployment",
+      "UnauthRoleName": "amplify-integratedapi-dev-224119-unauthRole",
+      "StackName": "amplify-integratedapi-dev-224119",
+      "StackId": "arn:aws:cloudformation:us-east-1:767397674033:stack/amplify-integratedapi-dev-224119/85d857e0-487b-11ef-905d-1265f0da36c5",
+      "AmplifyAppId": "dibitdzlddu0g"
+    },
+    "categories": {
+      "function": {
+        "orderFunction": {
+          "mongodbUrl": "mongodb+srv://integratedcurriercompany:integratedcurrier@cluster0.71rkuxx.mongodb.net/integrated",
+          "emailUser": "integratedcurriercompany@gmail.com",
+          "emailPass": "zbspbhbigckxncpa",
+          "deploymentBucketName": "amplify-integratedapi-dev-224119-deployment",
+          "s3Key": "amplify-builds/orderFunction-573662424c59392f6452-build.zip"
+        }
+      },
+      "api": {
+        "orderApi": {}
+      }
+    }
+  }
+}
